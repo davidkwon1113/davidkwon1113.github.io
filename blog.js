@@ -11,9 +11,9 @@ function initGiscus(containerId) {
   var script = document.createElement('script');
   script.src = 'https://giscus.app/client.js';
   script.setAttribute('data-repo', 'davidkwon1113/davidkwon1113.github.io');
-  script.setAttribute('data-repo-id', '');  // filled after Giscus setup
-  script.setAttribute('data-category', 'Blog Comments');
-  script.setAttribute('data-category-id', ''); // filled after Giscus setup
+  script.setAttribute('data-repo-id', 'R_kgDORxdvlg');
+  script.setAttribute('data-category', 'General');
+  script.setAttribute('data-category-id', 'DIC_kwDORxdvls4C5VPX');
   script.setAttribute('data-mapping', 'pathname');
   script.setAttribute('data-strict', '0');
   script.setAttribute('data-reactions-enabled', '1');
