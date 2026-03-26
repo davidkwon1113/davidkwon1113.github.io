@@ -4,6 +4,7 @@
 
 ## Blog Posts
 
+- [Introducing ahang-ahang Blog](posts/introducing-ahang-ahang-blog.md): Launching a personal blog at the intersection of AI-powered productivity, product management, and fatherhood.
 <!-- Posts added by /blog skill, format: - [Title](posts/slug.md): Summary -->
 
 ## About
