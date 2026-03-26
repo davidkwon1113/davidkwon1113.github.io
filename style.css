@@ -1,0 +1,359 @@
+/* ==========================================================================
+   Nordic Furniture — Blog Theme
+   Mood: warm stillness
+   Palette: #FAFAF7 bg, #F5F0EB surface, #C4A882 oak accent, #2C2C2C charcoal
+   Type: DM Sans (regular/medium/semibold)
+   Scale: perfect-fourth (1.333)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+/* === Reset === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === Tokens === */
+:root {
+  --bg: #FAFAF7;
+  --surface: #F5F0EB;
+  --text: #2C2C2C;
+  --text-secondary: #7A7A72;
+  --accent: #C4A882;
+  --border: #E5DFD8;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --base: 8px;
+}
+
+/* === Base === */
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* === Layout === */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+.page-wide {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+/* === Typography === */
+h1 {
+  font-size: 2.369rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.777rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-top: 64px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 1.333rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 24px;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 32px 0;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  overflow-x: auto;
+  margin: 32px 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 64px 0;
+}
+
+ul, ol {
+  padding-left: 24px;
+  margin-bottom: 24px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* === Navigation === */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+/* === Post Card (index page) === */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.post-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+.post-card:first-child {
+  padding-top: 0;
+}
+
+.post-card:hover {
+  background: transparent;
+}
+
+.post-card:hover .post-card-title {
+  color: var(--accent);
+}
+
+.post-card-date {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.post-card-title {
+  font-size: 1.333rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+}
+
+.post-card-summary {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.post-card-keywords {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.keyword {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: var(--surface);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+/* === Post Page === */
+.post-header {
+  margin-bottom: 48px;
+}
+
+.post-date {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.post-title {
+  font-size: 2.369rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.post-summary {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.post-body {
+  margin-bottom: 64px;
+}
+
+.post-body img {
+  border-radius: var(--radius);
+  margin: 32px 0;
+}
+
+/* === Social (Share + Comments) === */
+.social-section {
+  border-top: 1px solid var(--border);
+  padding-top: 48px;
+  margin-top: 64px;
+}
+
+.share-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.share-btn {
+  font-family: var(--font);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.share-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.comments-section {
+  margin-top: 48px;
+}
+
+/* === Portfolio === */
+.portfolio-section {
+  margin-top: 96px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.portfolio-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: box-shadow 0.2s ease;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.portfolio-card h3 {
+  margin-top: 0;
+  font-size: 1.125rem;
+}
+
+.portfolio-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* === Footer === */
+.footer {
+  margin-top: 96px;
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Empty State === */
+.empty {
+  padding: 64px 0;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+/* === Responsive === */
+@media (max-width: 640px) {
+  .page, .page-wide { padding: 48px 20px; }
+  h1, .post-title { font-size: 1.777rem; }
+  h2 { font-size: 1.333rem; margin-top: 40px; }
+  .nav { padding: 16px 20px; gap: 16px; }
+  .nav-links { gap: 16px; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+}

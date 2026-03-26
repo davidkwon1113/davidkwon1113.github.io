@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} — David Kwon</title>
+<meta name="description" content="{{OG_DESCRIPTION}}">
+<meta name="keywords" content="{{KEYWORDS_CSV}}">
+<meta name="author" content="David Kwon">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{OG_DESCRIPTION}}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://davidkwon1113.github.io/posts/{{SLUG}}.html">
+<meta property="og:site_name" content="David Kwon">
+<!-- {{OG_IMAGE_META}} -->
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{OG_DESCRIPTION}}">
+
+<link rel="canonical" href="https://davidkwon1113.github.io/posts/{{SLUG}}.html">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="../">David Kwon</a>
+  <ul class="nav-links">
+    <li><a href="../">Blog</a></li>
+    <li><a href="../portfolio.html">Portfolio</a></li>
+  </ul>
+</nav>
+
+<article class="page">
+  <header class="post-header">
+    <p class="post-date">{{DATE}}<!-- {{UPDATED}} --></p>
+    <h1 class="post-title">{{TITLE}}</h1>
+    <p class="post-summary">{{SUMMARY}}</p>
+  </header>
+
+  <div class="post-body">
+    {{BODY}}
+  </div>
+
+  <div class="social-section">
+    <div class="share-row">
+      <button class="share-btn" onclick="shareTwitter()">Share on X</button>
+      <button class="share-btn" onclick="shareLinkedIn()">Share on LinkedIn</button>
+      <button class="share-btn" onclick="copyLink()">Copy link</button>
+    </div>
+    <div class="comments-section" id="giscus-container">
+      <!-- Giscus loads here -->
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  David Kwon · LINE Pay Thailand
+</footer>
+
+<script src="../blog.js"></script>
+<script>
+  initShare('{{TITLE}}', window.location.href);
+  initGiscus('giscus-container');
+</script>
+</body>
+</html>
