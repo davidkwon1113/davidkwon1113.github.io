@@ -60,3 +60,53 @@ function copyLink() {
     });
   }
 }
+
+/* === Format Tabs (Human / Agent) === */
+function initFormatTabs(slug) {
+  var tabs = document.querySelectorAll('.format-tab');
+  var panels = document.querySelectorAll('.format-panel');
+  var mdContainer = document.getElementById('md-content');
+  var mdLoaded = false;
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+
+      tab.classList.add('active');
+      document.getElementById('panel-' + target).classList.add('active');
+
+      if (target === 'agent' && !mdLoaded) {
+        mdLoaded = true;
+        var mdUrl = slug + '.md';
+        fetch(mdUrl)
+          .then(function(r) { return r.text(); })
+          .then(function(text) {
+            var parts = text.split('---');
+            if (parts.length >= 3) {
+              var frontmatter = parts[1].trim();
+              var body = parts.slice(2).join('---').trim();
+              mdContainer.innerHTML =
+                '<div class="md-frontmatter">---\n' + escapeHtml(frontmatter) + '\n---</div>' +
+                escapeHtml(body) +
+                '<a class="md-view-link" href="' + mdUrl + '" target="_blank">Open raw .md file</a>';
+            } else {
+              mdContainer.innerHTML = escapeHtml(text) +
+                '<a class="md-view-link" href="' + mdUrl + '" target="_blank">Open raw .md file</a>';
+            }
+          })
+          .catch(function() {
+            mdContainer.innerHTML = 'Failed to load .md file.';
+          });
+      }
+    });
+  });
+}
+
+function escapeHtml(text) {
+  var div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}

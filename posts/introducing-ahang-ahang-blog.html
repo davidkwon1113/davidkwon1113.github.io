@@ -44,6 +44,12 @@
     <p class="post-summary">Launching a personal blog at the intersection of AI-powered productivity, product management, and fatherhood. ahang-ahang means when dad is happy, the kids are happy.</p>
   </header>
 
+  <div class="format-tabs">
+    <button class="format-tab active" data-tab="human">Human<span class="tab-badge">.html</span></button>
+    <button class="format-tab" data-tab="agent">Agent<span class="tab-badge">.md</span></button>
+  </div>
+
+  <div id="panel-human" class="format-panel active">
   <div class="post-body">
     <p>I've been thinking about starting a blog for a while. Today, I'm finally doing it.</p>
 
@@ -114,6 +120,14 @@
     <p>— David</p>
   </div>
 
+  </div><!-- /panel-human -->
+
+  <div id="panel-agent" class="format-panel">
+    <div class="md-view">
+      <span class="md-view-loading" id="md-content">Loading .md content...</span>
+    </div>
+  </div>
+
   <div class="social-section">
     <div class="share-row">
       <button class="share-btn" onclick="shareTwitter()">Share on X</button>
@@ -134,6 +148,7 @@
 <script>
   initShare('Introducing ahang-ahang Blog', window.location.href);
   initGiscus('giscus-container');
+  initFormatTabs('introducing-ahang-ahang-blog');
 </script>
 </body>
 </html>

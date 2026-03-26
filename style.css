@@ -293,6 +293,86 @@ li {
   margin-top: 48px;
 }
 
+/* === Format Tabs (Human / Agent) === */
+.format-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.format-tab {
+  font-family: var(--font);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.format-tab:hover {
+  color: var(--text);
+}
+
+.format-tab.active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.format-tab .tab-badge {
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-left: 6px;
+}
+
+.format-panel {
+  display: none;
+}
+
+.format-panel.active {
+  display: block;
+}
+
+/* Agent .md view */
+.md-view {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+}
+
+.md-view .md-frontmatter {
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.md-view-loading {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.md-view-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.8125rem;
+  color: var(--accent);
+}
+
 /* === Portfolio === */
 .portfolio-section {
   margin-top: 96px;

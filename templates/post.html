@@ -44,8 +44,21 @@
     <p class="post-summary">{{SUMMARY}}</p>
   </header>
 
+  <div class="format-tabs">
+    <button class="format-tab active" data-tab="human">Human<span class="tab-badge">.html</span></button>
+    <button class="format-tab" data-tab="agent">Agent<span class="tab-badge">.md</span></button>
+  </div>
+
+  <div id="panel-human" class="format-panel active">
   <div class="post-body">
     {{BODY}}
+  </div>
+  </div>
+
+  <div id="panel-agent" class="format-panel">
+    <div class="md-view">
+      <span class="md-view-loading" id="md-content">Loading .md content...</span>
+    </div>
   </div>
 
   <div class="social-section">
@@ -68,6 +81,7 @@
 <script>
   initShare('{{TITLE}}', window.location.href);
   initGiscus('giscus-container');
+  initFormatTabs('{{SLUG}}');
 </script>
 </body>
 </html>
